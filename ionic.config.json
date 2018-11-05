@@ -1,0 +1,7 @@
+{
+  "name": "Gruuve",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
