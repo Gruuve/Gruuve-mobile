@@ -17,10 +17,10 @@
     
   <ion-item margin-top>
     <ion-label position="floating"><ion-icon name="md-search"></ion-icon></ion-label>
-    <ion-input placeholder="Type here" required="true"></ion-input>
+    <ion-input placeholder="Type here" required="true" [(ngModel)]="search"></ion-input>
   </ion-item>
   <p class="temp">
-  <button ion-button round color="primary" outline>Search</button>
+  <button ion-button round color="primary" outline (click)="press()">Search</button>
   
 <br>
 

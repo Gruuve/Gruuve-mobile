@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the SearchResPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
 
 @IonicPage()
 @Component({
@@ -15,11 +12,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchResPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  search : string = this.navParams.get('search');
+  newString = this.search.replace(/\s+/g,' ').trim();
+  final = this.newString.replace(' ', '+');
+  
+  //url2 = 'https://horoscope-api.herokuapp.com/horoscope/month/' + this.name;
+  horoscope2: Observable<any>;
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchResPage');
+  press(){
+    this.navCtrl.pop();
   }
+  
 
 }
