@@ -16,11 +16,19 @@ export class SearchResPage {
   newString = this.search.replace(/\s+/g,' ').trim();
   final = this.newString.replace(' ', '+');
   
-  //url2 = 'https://horoscope-api.herokuapp.com/horoscope/month/' + this.name;
-  horoscope2: Observable<any>;
+  url = 'https://gruuve-main.herokuapp.com/api/users?q='+this.final;
+  data1: Observable<any>;
+  main:any;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient) {
+
+    this.data1 = this.httpClient.get(this.url);
+    this.data1
+    .subscribe(data => {
+    this.main = data;
+    });
+
   }
 
   press(){
