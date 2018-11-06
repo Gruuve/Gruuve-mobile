@@ -20,7 +20,7 @@ export class HomePage {
    if(this.search==''){
     const toast = this.toastCtrl.create({
       message: 'Please enter a query',
-      duration: 3000
+      duration: 2000
     });
     toast.present();
    }
