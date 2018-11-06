@@ -41,10 +41,13 @@ export class SearchResPage {
   presentLoading() {
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 2000
+      duration: 900
     });
     loader.present();
   }
+
+
+  
   
 
 }

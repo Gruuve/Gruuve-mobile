@@ -2,9 +2,16 @@ page-search-res {
     ion-card {
         border-top: 2px solid colorofyourchoice!important ;
         border-color: black!important;
-        border-radius : 20px!important ;
+        border-radius : 13px!important ;
      }
      .masters {
         background-color: #e0e0e0;
+      }
+      .heading {
+        font-size: 20px !important;
+      }
+      .image {
+          height: 20px !important;
+          width: 20px !important;
       }
 }

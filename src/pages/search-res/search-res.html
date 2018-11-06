@@ -18,12 +18,18 @@
   
   <ion-card *ngFor="let item of main">
         <ion-card-content>
-          <ion-card-title>
+          <ion-card-title class="heading">
             {{item.title}}
             </ion-card-title>
           <p>
-            {{item.description}}
+            {{item.description|slice:0:90}}...
           </p>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2><img src='{{item.icon}}' class="image"></ion-col>
+              <ion-col col-10><a href='{{item.url}}'>{{item.url | slice:0:33}}...</a></ion-col>
+            </ion-row>
+            </ion-grid>
         </ion-card-content>
       </ion-card>
 
