@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SearchResPage } from '../search-res/search-res';
 import { ToastController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'page-home',
@@ -11,7 +14,21 @@ export class HomePage {
 
   search:string='';
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+  url2 = 'https://gruuve.github.io/demo.json';
+  data2: Observable<any>;
+  main2 : any;
+  a;b;c;d;e;f;
+
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public httpClient: HttpClient) {
+
+    this.data2 = this.httpClient.get(this.url2);
+    this.data2
+    .subscribe(data => {
+      this.main2 = data;
+      this.a=data.img1;
+      this.b=data.header1;
+      this.c=data.subheader1;
+    });
 
   }
 
