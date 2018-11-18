@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ImagesResPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ToastController } from 'ionic-angular';
+import { ImagesPage } from '../images/images';
+
 
 @IonicPage()
 @Component({
@@ -15,11 +12,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ImagesResPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  search:string='';
+
+ 
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ImagesResPage');
+   press(){
+
+   if(this.search==''){
+    const toast = this.toastCtrl.create({
+      message: 'Please enter a query',
+      duration: 2000
+    });
+    toast.present();
+   }
+   else{
+    this.navCtrl.push(ImagesPage,{
+      'search':this.search
+    });
+  }
+  
   }
 
 }

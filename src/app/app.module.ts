@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SearchResPage } from '../pages/search-res/search-res';
 import { ImagesResPage } from '../pages/images-res/images-res';
+import { ImagesPage } from '../pages/images/images';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     ListPage,
     SearchResPage,
-    ImagesResPage
+    ImagesResPage,
+    ImagesPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     ListPage,
     SearchResPage,
-    ImagesResPage
+    ImagesResPage,
+    ImagesPage
   ],
   providers: [
     StatusBar,
