@@ -15,9 +15,11 @@
 
 <ion-content padding class="masters">
 
-  <a href="http://static.dnaindia.com/sites/default/files/2014/05/23/238684-1501697101540206118351651705118862n.jpg">
-    <img src="http://tse3.mm.bing.net/th?id=OIP.wEFNbAczezYaor8irt4ONgHaGC&w=230&h=170&rs=1&pcl=dddddd&o=5&pid=1.1">
+<div *ngFor="let item of main">
+   <a href='{{item.url}}'>
+    <img src='{{item.thumb}}'>
   </a>
+</div>
 
   
 

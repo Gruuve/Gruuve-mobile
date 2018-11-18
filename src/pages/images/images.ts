@@ -22,7 +22,12 @@ export class ImagesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient, public loadingCtrl: LoadingController) {
   
-  
+    this.presentLoading();
+    this.data1 = this.httpClient.get(this.url);
+    this.data1
+    .subscribe(data => {
+      this.main = data;
+    });
   
   }
 
@@ -34,7 +39,7 @@ export class ImagesPage {
   presentLoading() {
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 900
+      duration: 1100
     });
     loader.present();
   }
